@@ -1,36 +1,34 @@
 # SoundBoard Lite
 
-Lekka i nowoczesna aplikacja na system Windows pełniąca rolę wirtualnego panelu z dźwiękami (soundboard). Stworzona z myślą o szybkim wyzwalaniu ulubionych efektów dźwiękowych, memów i wstawek w tle, za pomocą zdefiniowanych skrótów klawiszowych.
+A lightweight and modern Windows application serving as a virtual soundboard. Designed for quickly triggering your favorite sound effects, memes, and audio clips in the background using customizable global hotkeys.
 
-## Główne Funkcje
+## Key Features
 
-* **Odtwarzanie w tle:** Działa jako ukryta aplikacja w systemowym pasku zadań (System Tray).
-* **Globalne Skróty Klawiszowe:** Zintegrowana obsługa globalnych skrótów (np. `Ctrl+Shift+D`), pozwalająca na wyzwalanie dźwięków nawet gdy grasz w grę lub pracujesz w innym programie.
-* **Wybór Wyjścia Audio:** Możliwość skierowania dźwięku do konkretnego urządzenia w systemie (np. Virtual Audio Cable) zamiast do domyślnych głośników.
-* **Nowoczesny Interfejs:** Przejrzysty i intuicyjny Dark Mode zbudowany w WPF przy użyciu `MaterialDesignThemes`.
-* **Lokalna Baza Danych:** Wszystkie ustawienia i przypisane skróty zapisywane są bezpiecznie w lekkiej bazie SQLite.
+* **Background Playback:** Runs silently as a background application in the System Tray.
+* **Global Hotkeys:** Integrated support for global keyboard shortcuts (e.g., `Ctrl+Shift+D`), allowing you to trigger sounds even while playing a game or working in another program.
+* **Audio Output Selection:** Ability to route audio to a specific device in the system (e.g., Virtual Audio Cable) instead of the default speakers.
+* **Modern Interface:** A clean and intuitive Dark Mode built with WPF using `MaterialDesignThemes`.
+* **Local Database:** All settings and assigned shortcuts are safely stored in a lightweight SQLite database.
 
-## Wymagania
+## Installation / Usage (Pre-built Release)
 
-* System operacyjny Windows 10/11
-* Zestaw narzędzi [.NET 9.0 SDK](https://dotnet.microsoft.com/download)
+You don't need to install any programming tools to use this application!
+1. Head over to the [Releases](../../releases) page.
+2. Download the latest `SoundBoardLite.exe` file.
+3. Simply double-click the downloaded executable to run it. No installation is required!
 
-## Uruchomienie
+## Development Mode
 
-Aby uruchomić aplikację w trybie deweloperskim, otwórz terminal w głównym katalogu projektu i wpisz:
+If you are a developer and want to build or modify the code yourself, you will need the [.NET 9.0 SDK](https://dotnet.microsoft.com/download) installed on your Windows 10/11 machine.
+
+To run the application in development mode, open a terminal in the main project directory and execute:
 ```bash
 dotnet run
 ```
 
-## Budowanie Wersji Finalnej (Release)
-Aby utworzyć pojedynczy plik gotowy do udostępnienia (bez potrzeby instalowania .NET):
-```bash
-dotnet publish -c Release -r win-x64 --self-contained -p:PublishSingleFile=true
-```
-
-## Wykorzystane Technologie
-- **C# & WPF** - Aplikacja i interfejs
-- **NAudio** - Obsługa i routing strumieni audio
-- **NHotkey** - Rejestracja globalnych skrótów klawiszowych
-- **Hardcodet.NotifyIcon.Wpf** - Obsługa ikonki w System Tray
-- **SQLite & Dapper** - Baza danych i ORM
+## Technologies Used
+- **C# & WPF** - Application logic and user interface
+- **NAudio** - Audio playback and stream routing
+- **NHotkey** - Global hotkey registration
+- **Hardcodet.NotifyIcon.Wpf** - System Tray icon integration
+- **SQLite & Dapper** - Database and ORM
