@@ -14,8 +14,9 @@ A lightweight and modern Windows application serving as a virtual soundboard. De
 
 You don't need to install any programming tools to use this application!
 1. Head over to the [Releases](../../releases) page.
-2. Download the latest `SoundBoardLite.exe` file.
-3. Simply double-click the downloaded executable to run it. No installation is required!
+2. Download the latest `.zip` release archive.
+3. Extract the downloaded archive to any folder on your computer.
+4. Open the folder and double-click `SoundBoardLite.exe` to run the app. No installation is required!
 
 ## Development Mode
 
