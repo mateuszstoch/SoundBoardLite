@@ -31,8 +31,8 @@
                         TrayMouseDoubleClick="TrayIcon_TrayMouseDoubleClick">
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Pokaż okno" Click="MenuItem_Show_Click" />
-                    <MenuItem Header="Zamknij" Click="MenuItem_Quit_Click" />
+                    <MenuItem Header="Show window" Click="MenuItem_Show_Click" />
+                    <MenuItem Header="Exit" Click="MenuItem_Quit_Click" />
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>
@@ -42,15 +42,15 @@
             <DockPanel>
                 <TextBlock VerticalAlignment="Center" Margin="16 0 0 0" Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="SoundBoard Lite"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Right">
-                    <TextBlock Text="Wyjście Audio:" VerticalAlignment="Center" Margin="0 0 8 0" Foreground="White" />
+                    <TextBlock Text="Audio Output:" VerticalAlignment="Center" Margin="0 0 8 0" Foreground="White" />
                     <ComboBox ItemsSource="{Binding AudioDevices}" 
                               SelectedItem="{Binding SelectedAudioDevice}" 
                               DisplayMemberPath="Name" 
                               Width="250" 
                               Foreground="White"
-                              materialDesign:HintAssist.Hint="Wybierz urządzenie"
+                              materialDesign:HintAssist.Hint="Select device"
                               Margin="0 0 16 0"/>
-                    <Button Content="Dodaj Dźwięk" Command="{Binding AddSoundCommand}" />
+                    <Button Content="Add Sound" Command="{Binding AddSoundCommand}" />
                 </StackPanel>
             </DockPanel>
         </materialDesign:ColorZone>
@@ -68,7 +68,7 @@
                         <materialDesign:Card Width="220" Margin="8" Padding="12" materialDesign:ElevationAssist.Elevation="Dp2">
                             <StackPanel>
                                 <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="16" TextTrimming="CharacterEllipsis" Margin="0 0 0 8"/>
-                                <TextBox Text="{Binding Shortcut}" materialDesign:HintAssist.Hint="Skrót (np. F1, Ctrl+D)" Margin="0 0 0 8"/>
+                                <TextBox Text="{Binding Shortcut}" materialDesign:HintAssist.Hint="Shortcut (e.g., F1, Ctrl+D)" Margin="0 0 0 8"/>
                                 
                                 <Grid Margin="0 8 0 8">
                                     <Grid.ColumnDefinitions>
@@ -80,12 +80,12 @@
                                 </Grid>
                                 
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                    <Button Content="Zapisz" 
+                                    <Button Content="Save" 
                                             Style="{StaticResource MaterialDesignFlatButton}"
                                             Command="{Binding DataContext.SaveSoundCommand, RelativeSource={RelativeSource AncestorType=Window}}" 
                                             CommandParameter="{Binding}" 
                                             Margin="0 8 8 0" />
-                                    <Button Content="Odtwórz" 
+                                    <Button Content="Play" 
                                             Command="{Binding DataContext.PlaySoundCommand, RelativeSource={RelativeSource AncestorType=Window}}" 
                                             CommandParameter="{Binding}" 
                                             Margin="0 8 0 0" />

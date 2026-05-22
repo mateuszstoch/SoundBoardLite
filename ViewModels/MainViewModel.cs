@@ -69,8 +69,8 @@ public partial class MainViewModel : ObservableObject
     {
         var openFileDialog = new Microsoft.Win32.OpenFileDialog
         {
-            Filter = "Pliki audio (*.mp3;*.wav)|*.mp3;*.wav|Wszystkie pliki (*.*)|*.*",
-            Title = "Wybierz plik dźwiękowy"
+            Filter = "Audio files (*.mp3;*.wav)|*.mp3;*.wav|All files (*.*)|*.*",
+            Title = "Select an audio file"
         };
 
         if (openFileDialog.ShowDialog() == true)
