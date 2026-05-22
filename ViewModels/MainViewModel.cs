@@ -99,6 +99,32 @@ public partial class MainViewModel : ObservableObject
         RegisterHotkey(sound);
     }
 
+    [RelayCommand]
+    private async Task DeleteSoundAsync(SoundItem sound)
+    {
+        if (sound == null) return;
+        
+        var result = System.Windows.MessageBox.Show(
+            $"Are you sure you want to delete '{sound.Name}'?", 
+            "Delete Sound", 
+            System.Windows.MessageBoxButton.YesNo, 
+            System.Windows.MessageBoxImage.Warning);
+            
+        if (result == System.Windows.MessageBoxResult.Yes)
+        {
+            await _db.DeleteSoundAsync(sound.Id);
+            
+            try
+            {
+                NHotkey.Wpf.HotkeyManager.Current.Remove(sound.Id.ToString());
+            }
+            catch { }
+            
+            var dbSounds = await _db.GetSoundsAsync();
+            Sounds = new ObservableCollection<SoundItem>(dbSounds);
+        }
+    }
+
     public void RegisterAllHotkeys()
     {
         foreach (var sound in Sounds)
